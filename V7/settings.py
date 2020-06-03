@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-# import os
 import environ
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -21,15 +21,13 @@ environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+templates = environ.Path('V7/templates')
 
 # False if not in os.environ
 DEBUG = env('DEBUG')
 
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ['ec2-3-22-164-75.us-east-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
 
@@ -60,7 +58,7 @@ ROOT_URLCONF = 'V7.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [templates],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
