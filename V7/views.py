@@ -1,11 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .forms import ContactForm
 
 def index(request):
-	return render(request,'base_template.html', {})
+	context = {"title":"V7",} 
+	return render(request,'base_template.html', context)
 
 def about(request):
-	return render(request, 'base_template.html', {})
+	context = {"title":"About",}
+	return render(request, 'base_template.html', context)
 
 def contact(request):
-	return render(request, 'base_template.html', {})
+	form = ContactForm()
+	context = {
+	"title":"Contact",
+	"form": form,
+	} 
+	return render(request, 'base_template.html', context)

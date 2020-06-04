@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['ec2-3-22-164-75.us-east-2.compute.amazonaws.com', 'localhost',
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

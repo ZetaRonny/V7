@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html>
+{# Load the tag library #}
+{% load bootstrap4 %}
 
-<head>
-  <title>Page Title</title>
-</head>
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
-<body>
-welcome to variant seven
-</body>
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 
-</html>
+{# Display a form #}
+<form action="/url/to/submit/" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  {% endbuttons %}
+</form>
+
+{# Read the documentation for more information #}
