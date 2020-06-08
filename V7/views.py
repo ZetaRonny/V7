@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import ContactForm
+
 
 def index(request):
 	context = {"title":"V7",} 
@@ -11,9 +11,7 @@ def about(request):
 	return render(request, 'base_template.html', context)
 
 def contact(request):
-	form = ContactForm()
 	context = {
 	"title":"Contact",
-	"form": form,
 	} 
 	return render(request, 'base_template.html', context)
