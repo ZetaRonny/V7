@@ -7,9 +7,9 @@ logs
 
 # Ignore the build directory
 /dist
-static_compiled
-static_root
-static_compiled
+V7/static_compiled
+V7/static_root
+
 
 # The file containing environment variables 
 .env
