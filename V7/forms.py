@@ -15,6 +15,13 @@ class RegisterForm(forms.Form):
 	password = forms.CharField()
 	confirm_password = forms.CharField()
 
+	def clean_email(self):
+		email = self.cleaned_data.get('email')
+		qs = User.objects.filter(email=eamil)
+		if qs.exist():
+			return forms.ValidationError('email exists in our system')
+		return email
+
 	def clean_username(self):
 		username = self.cleaned_data.get('username')
 		qs = User.objects.filter(username=username)

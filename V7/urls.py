@@ -27,6 +27,3 @@ urlpatterns = [
     path("register/", register_page),
 
 ]
-
-if settings.DEBUG:
-	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
