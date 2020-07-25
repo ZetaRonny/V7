@@ -2,12 +2,19 @@
 
 from django import forms
 from django.contrib.auth import get_user_model
+from django.core.mail import send_mail
 
 User = get_user_model()
 
+class ContactForm(forms.Form):
+	username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
+	email = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
+	message = forms.CharField(max_length=1024, widget=forms.TextInput(attrs={'class' : 'form-control'}))
+
+
 class LoginForm(forms.Form):
-	username = forms.CharField()
-	password = forms.CharField(max_length=32, widget=forms.PasswordInput)
+	username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
+	password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
 
 class RegisterForm(forms.Form):
 	username = forms.CharField()

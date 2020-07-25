@@ -1,1 +1,43 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'variables/variables';
+@import 'bootstrap.scss';
+@import 'forms.scss';
+@import 'footer.scss';
+@import 'navigation.scss';
+
+
+html, body {
+	height: 100vh !important;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+body {
+	background-color: #EBECf0;
+}
+
+
+a {
+	color: $V7cranberry;
+}
+
+a:hover {
+	color: $V7red;
+}
+
+.btn:hover {
+	background-color: $V7red;
+	color: #fff;
+}
+
+.btn {
+	background-color:$V7cranberry;
+	border: $V7cranberry;
+	color: #fff;
+}
+
+.btn:hover {
+	background-color: $V7red;
+}
+

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'V7_products'
+    'V7_products',
+    "bootstrap4"
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,19 @@ STATICFILES_DIRS = [
    'V7/static_compiled'
 ]
 
+# Email Settings
+# EMAIL_BACKEND = env('EMAIL_BACKEND')
+# EMAIL_HOST = env('EMAIL_HOST')
+# EMAIL_PORT = env('EMAIL_PORT')
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+# EMAIL_USE_SSL = env('EMAIL_USE_SSL')
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='ContactVariantSeven@gmail.com'
+EMAIL_HOST_PASSWORD='lvcxeofkyxcmoytf'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False

@@ -1,0 +1,20 @@
+@import 'variables/variables';
+@import 'bootstrap.css';
+
+
+.form-group label {
+  @extend .form-group; 
+  color: $V7cranberry;
+}
+
+
+.btn {
+  @extend .btn;
+  color: #ffffff;
+  background-color: $V7cranberry;
+  border: $V7cranberry;
+}
+
+.btn:hover {
+	background-color: $V7red; 
+}

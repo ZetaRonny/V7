@@ -1,0 +1,12 @@
+/*site variables*/
+@import url(bootstrap.css);
+.form-group label {
+  color: #7a1717; }
+
+.btn {
+  color: #ffffff;
+  background-color: #7a1717;
+  border: #7a1717; }
+
+.btn:hover {
+  background-color: #ba5242; }
