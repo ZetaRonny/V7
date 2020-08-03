@@ -4,17 +4,29 @@
 
 .form-group label {
   @extend .form-group; 
-  color: $V7cranberry;
+  color: $v_accent;
 }
 
+label {
+	color: $v_accent;
+}
+
+
+.card-title {
+	color: $v_main;
+}
+
+.card-subtitle {
+	color: $v_accent;
+}
 
 .btn {
   @extend .btn;
   color: #ffffff;
-  background-color: $V7cranberry;
-  border: $V7cranberry;
+  background-color: $v_main;
+  border: $v_main;
 }
 
 .btn:hover {
-	background-color: $V7red; 
+	background-color: $v_accent; 
 }

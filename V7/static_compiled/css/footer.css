@@ -1,4 +1,10 @@
 /*site variables*/
+/* blue */
+/* accent blue */
+/* lightest blue */
+/*
+$v_main: #a13c4f; //pink 
+$v_accent: #b7646f; // accent pink */
 .col_white_amrc {
   color: #FFF; }
 
@@ -64,6 +70,9 @@ a:hover {
     border-bottom:1px solid #323f45; 
     padding-bottom:20px;
 }*/
+.footer h5 {
+  color: #8d99e4; }
+
 .foote_bottom_ul_amrc {
   list-style-type: none;
   padding: 0px;

@@ -11,21 +11,20 @@ class ContactForm(forms.Form):
 	email = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
 	message = forms.CharField(max_length=1024, widget=forms.TextInput(attrs={'class' : 'form-control'}))
 
-
 class LoginForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
 	password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
 
 class RegisterForm(forms.Form):
-	username = forms.CharField()
-	email = forms.CharField()
-	password = forms.CharField()
-	confirm_password = forms.CharField()
+	username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
+	email = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
+	password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
+	confirm_password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
 
 	def clean_email(self):
 		email = self.cleaned_data.get('email')
 		qs = User.objects.filter(email=eamil)
-		if qs.exist():
+		if qs.exist(widget=forms.TextInput(attrs={'class' : 'form-control'})):
 			return forms.ValidationError('email exists in our system')
 		return email
 

@@ -1,4 +1,10 @@
 /*site variables*/
+/* blue */
+/* accent blue */
+/* lightest blue */
+/*
+$v_main: #a13c4f; //pink 
+$v_accent: #b7646f; // accent pink */
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -7165,18 +7171,39 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 /*site variables*/
+/* blue */
+/* accent blue */
+/* lightest blue */
+/*
+$v_main: #a13c4f; //pink 
+$v_accent: #b7646f; // accent pink */
 .form-group label {
-  color: #7a1717; }
+  color: #5164d6; }
+
+label {
+  color: #5164d6; }
+
+.card-title {
+  color: #2d42bf; }
+
+.card-subtitle {
+  color: #5164d6; }
 
 .btn {
   color: #ffffff;
-  background-color: #7a1717;
-  border: #7a1717; }
+  background-color: #2d42bf;
+  border: #2d42bf; }
 
 .btn:hover {
-  background-color: #ba5242; }
+  background-color: #5164d6; }
 
 /*site variables*/
+/* blue */
+/* accent blue */
+/* lightest blue */
+/*
+$v_main: #a13c4f; //pink 
+$v_accent: #b7646f; // accent pink */
 .col_white_amrc {
   color: #FFF; }
 
@@ -7242,6 +7269,9 @@ a:hover {
     border-bottom:1px solid #323f45; 
     padding-bottom:20px;
 }*/
+.footer h5 {
+  color: #8d99e4; }
+
 .foote_bottom_ul_amrc {
   list-style-type: none;
   padding: 0px;
@@ -7280,6 +7310,12 @@ a:hover {
   text-align: center; }
 
 /*site variables*/
+/* blue */
+/* accent blue */
+/* lightest blue */
+/*
+$v_main: #a13c4f; //pink 
+$v_accent: #b7646f; // accent pink */
 /* navigation bar */
 .navbar {
   background-color: #BEBEBE; }
@@ -7288,10 +7324,16 @@ a:hover {
   background-color: #BEBEBE; }
 
 .nav-link {
-  color: #7a1717 !important; }
+  color: #2d42bf !important; }
 
 .nav-link:hover {
-  color: #ba5242 !important; }
+  color: #5164d6 !important; }
+
+.navbar-brand {
+  color: #2d42bf !important; }
+
+.navbar-brand:hover {
+  color: #5164d6 !important; }
 
 @media (max-width: 992px) {
   .mobileMenu {
@@ -7329,19 +7371,19 @@ body {
   background-color: #EBECf0; }
 
 a {
-  color: #7a1717; }
+  color: #2d42bf; }
 
 a:hover {
-  color: #ba5242; }
+  color: #5164d6; }
 
 .btn:hover {
-  background-color: #ba5242;
+  background-color: #5164d6;
   color: #fff; }
 
 .btn {
-  background-color: #7a1717;
-  border: #7a1717;
+  background-color: #2d42bf;
+  border: #2d42bf;
   color: #fff; }
 
 .btn:hover {
-  background-color: #ba5242; }
+  background-color: #5164d6; }

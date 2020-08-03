@@ -19,25 +19,25 @@ body {
 
 
 a {
-	color: $V7cranberry;
+	color: $v_main;
 }
 
 a:hover {
-	color: $V7red;
+	color: $v_accent;
 }
 
 .btn:hover {
-	background-color: $V7red;
+	background-color: $v_accent;
 	color: #fff;
 }
 
 .btn {
-	background-color:$V7cranberry;
-	border: $V7cranberry;
+	background-color: $v_main;
+	border: $v_main;
 	color: #fff;
 }
 
 .btn:hover {
-	background-color: $V7red;
+	background-color: $v_accent;
 }
 
