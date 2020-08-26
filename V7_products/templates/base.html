@@ -7,10 +7,12 @@
 	{% include 'base/css.html' %}
 </head>
 <body class="d-flex flex-column">
-{% include 'base/navbar.html' %}
-	<div id="page-content">
-	{% block content %}{% endblock %}
-	{% include 'base/footer.html' %}
+	<div class="site-container">
+		{% include 'base/navbar.html' %}
+			<div id="page-content">
+				{% block content %}{% endblock %}
+			</div>
+		{% include 'base/footer.html' %}
 	</div>
 </body>
 </html>
