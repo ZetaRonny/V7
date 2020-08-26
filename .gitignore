@@ -1,3 +1,4 @@
+
 .env
 
 *.log
@@ -11,3 +12,25 @@
 */*/__pycache__/
 
 */__pycache__/
+=======
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore the build directory
+/dist
+/static_compiled
+/static_root
+
+
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
+

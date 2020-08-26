@@ -29,7 +29,7 @@ DEBUG = env('DEBUG')
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = ['ec2-3-22-164-75.us-east-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['variantseven.com', 'localhost', '127.0.0.1']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'V7_products'
+    'V7_products',
+    "bootstrap4"
 ]
 
 MIDDLEWARE = [
@@ -130,5 +131,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = "uploads"
-MEDIA_URL = "/media/"
+STATIC_ROOT ='/static_root/ '
+
+STATICFILES_DIRS = [
+   'V7/static_compiled'
+]
+
+# Email Settings
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_USE_SSL = env('EMAIL_USE_SSL')
+

@@ -1,0 +1,21 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+      "src_css": "sass",
+      "dest_css": "../static_compiled/css"
+  },
+  "scripts": {
+    "compile:css": "node-sass -o ../static_compiled/css sass",
+    "compile:css:watch": "node-sass -o ../static_compiled/css sass --watch",
+    "lint:css": "sass-lint sass/** -v -q"
+  },
+  "author": "rondal archer",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "node-sass": "^4.14.1"
+  }
+}

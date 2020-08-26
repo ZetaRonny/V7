@@ -1,0 +1,18 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta name="description" content="base template">
+	<meta name="keywords" content="variant seven ecommerce esport">
+	{% include 'base/css.html' %}
+</head>
+<body class="d-flex flex-column">
+	<div class="site-container">
+		{% include 'base/navbar.html' %}
+			<div id="page-content">
+				{% block content %}{% endblock %}
+			</div>
+		{% include 'base/footer.html' %}
+	</div>
+</body>
+</html>

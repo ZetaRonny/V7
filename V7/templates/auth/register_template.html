@@ -1,5 +1,24 @@
-<form method="POST">
-	{% csrf_token %}
-	{{ form }}
-	<button type="submit" class="btn btn-default">Submit</button>
-</form>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Register</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <form class="form-group">
+                {% csrf_token %}
+                {{ form }}
+                <hr>
+                <input type="submit" class="btn" value="submit">
+                </form>
+        </div>
+    </div>
+    </div>
+    <div class="col">
+</div>
+{% endblock %}

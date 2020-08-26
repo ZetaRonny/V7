@@ -17,16 +17,17 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import login_page, register_page
+from .views import login_page, register_page, index , contact, about , thankyou
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("V7_products.urls")),
-    path("login/", login_page),
-    path("register/", register_page),
+    path("login/", login_page, name='Login'),
+    path("register/", register_page, name='Register'),
+    path('', index, name="Index"),
+    path('contact/', contact, name='Contact'),
+    path('about/', about, name='About'),
+    path('thankyou/', thankyou, name='Thankyou'),
 
 ]
-
-if settings.DEBUG:
-	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
