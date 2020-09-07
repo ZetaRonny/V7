@@ -1,7 +1,12 @@
+import json
+import urllib
+
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate, login, get_user_model
+from django.conf import settings
+
 
 from .forms import LoginForm , RegisterForm , ContactForm
 
@@ -17,7 +22,7 @@ def thankyou(request):
 	context = {"title":"thank you"}
 	return render(request, 'contact/thankyou.html', context)
 
-def contact(request):
+def contact(request):	
 	if request.method == 'GET':
 		form = ContactForm()
 	else:
@@ -26,20 +31,37 @@ def contact(request):
 			username = form.cleaned_data.get('username')
 			message = form.cleaned_data.get('message')
 			email = form.cleaned_data.get('email')
-			try:
+
+			recaptcha_response = request.POST.get('g-recaptcha-response')
+			url = 'https://www.google.com/recaptcha/api/siteverify'
+			payload = {
+				'secret': settings.RECAPTCHA_SECRET_KEY,
+				'response':recaptcha_response
+			}
+		
+			data = urllib.parse.urlencode(payload).encode()
+			req = urllib.request.Request(url, data=data)
+
+			response = urllib.request.urlopen(req)
+			result = json.loads(response.read().decode())
+
+			if result['success']:
 				send_mail(
 				'message from ' + username, # subject
 				 message,
 				 email,
 				 ['ContactVariantSeven@gmail.com'],
 				)
-			except BadHeaderError:
-				return HttpResponse('invalid header found.')
-			return redirect('/thankyou')
+				return redirect('/thankyou')
+			else:
+				messages.error('not valid')
+				return redirect('/thankyou')
 	context = {
 		"title":"Contact",
-		"form": form
+		"form": form,
+		"site_key": settings.RECAPTCHA_SITE_KEY
 	} 
+
 	return render(request, 'contact/contact.html', context)
 
 def login_page(request):
