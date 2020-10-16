@@ -129,9 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = 'V7/static_compiled'
+STATIC_URL = 'assets'
 
-STATIC_ROOT ='/static_root/ '
+STATIC_ROOT ='assets'
 
 STATICFILES_DIRS = [
    'V7/static_compiled'
