@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import environ
+import mimetypes
+
+mimetypes.add_type("text/css", ".css", True)
 
 env = environ.Env(
     # set casting, default value
