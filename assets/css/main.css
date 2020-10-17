@@ -1,16 +1,3 @@
-/*site variables*/
-/* blue */
-/* accent blue */
-/* lightest blue */
-/*
-$v_main: #a13c4f; //pink 
-$v_accent: #b7646f; // accent pink */
-/*!
- * Bootstrap v4.5.0 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 @import url(bootstrap.css);
 :root {
   --blue: #007bff;
