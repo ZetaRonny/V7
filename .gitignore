@@ -23,8 +23,8 @@ logs
 # Ignore the build directory
 /dist
 /V7/static_compiled
-/V7/static_root
-/V7/static_src
+/V7/static_root/*
+/V7/static_src/*
 
 
 # The file containing environment variables 
