@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'V7_products',
     "bootstrap4",
-    'django-fontawesome-5'
+    'fontawesome_5',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +132,7 @@ USE_TZ = True
 SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
+
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 # Static files (CSS, JavaScript, Images)
