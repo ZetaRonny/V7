@@ -7,13 +7,11 @@
 	<link rel="shortcut icon" type="image/jpg" href="{% static 'images/favicon.png' %}"/>
 	{% include 'base/css.html' %}
 </head>
-<body class="d-flex flex-column">
-	<div class="site-container">
+<body class="d-flex flex-column min-vh-100">
 		{% include 'base/navbar.html' %}
 			<div id="page-content">
-				{% block content %}{% endblock %}
-			</div>
-		{% include 'base/footer.html' %}
-	</div>
+				{% block content %}{% endblock %}	
+			</div style="padding-bottom: 50px;">
+			{% include 'base/footer.html' %}
 </body>
 </html>

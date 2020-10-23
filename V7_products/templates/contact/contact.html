@@ -1,7 +1,16 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
+    <script src="https://www.google.com/recaptcha/api.js?render={{site_key}}"></script>
+    <script>
+	    grecaptcha.ready(function() {
+	        grecaptcha.execute('{{site_key}}', {action: 'submit'})
+	        .then(function(token) {
+	            var e = document.getElementById('g-recaptcha-response');
+	            e.value = token;
+	        });
+	    });
+	</script>
   <div class="row">
     <div class="col">
     </div>
@@ -22,15 +31,5 @@
     </div>
     <div class="col">
     </div>
-    <script src="https://www.google.com/recaptcha/api.js?render={{site_key}}"></script>
-    <script>
-	    grecaptcha.ready(function() {
-	        grecaptcha.execute('{{site_key}}', {action: 'submit'})
-	        .then(function(token) {
-	            var e = document.getElementById('g-recaptcha-response');
-	            e.value = token;
-	        });
-	    });
-	</script>
   </div>
 {% endblock %}

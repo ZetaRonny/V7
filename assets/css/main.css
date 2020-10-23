@@ -1,3 +1,9 @@
+/*!
+ * Bootstrap v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 @import url(bootstrap.css);
 :root {
   --blue: #007bff;
@@ -7157,152 +7163,34 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-/*site variables*/
-/* blue */
-/* accent blue */
-/* lightest blue */
-/*
-$v_main: #a13c4f; //pink 
-$v_accent: #b7646f; // accent pink */
 .form-group label {
-  color: #5164d6; }
+  color: #b7646f; }
 
 label {
-  color: #5164d6; }
+  color: #b7646f; }
 
 .card-title {
-  color: #2d42bf; }
+  color: #a13c4f; }
 
 .card-subtitle {
-  color: #5164d6; }
+  color: #b7646f; }
 
 .btn {
   color: #ffffff;
-  background-color: #2d42bf;
-  border: #2d42bf; }
+  background-color: #a13c4f;
+  border: #a13c4f; }
 
 .btn:hover {
-  background-color: #5164d6; }
+  background-color: #b7646f; }
 
-/*site variables*/
-/* blue */
-/* accent blue */
-/* lightest blue */
-/*
-$v_main: #a13c4f; //pink 
-$v_accent: #b7646f; // accent pink */
-.col_white_amrc {
-  color: #FFF; }
-
-footer {
+.footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  background-color: #BEBEBE;
-  min-height: 250px;
-  padding: 10px 0px 25px 0px;
-  position: relative;
-  left: 0;
-  bottom: 0; }
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5; }
 
-.pt2 {
-  padding-top: 40px;
-  margin-bottom: 20px; }
-
-footer p {
-  font-size: 13px;
-  color: #fff;
-  padding-bottom: 0px;
-  margin-bottom: 8px; }
-
-.mb10 {
-  padding-bottom: 15px; }
-
-a {
-  color: #fff;
-  text-decoration: none; }
-
-a:hover {
-  color: #fff; }
-
-.footer_ul_amrc {
-  margin: 0px;
-  list-style-type: none;
-  font-size: 14px;
-  padding: 0px 0px 10px 0px; }
-
-.footer_ul_amrc li {
-  padding: 0px 0px 5px 0px; }
-
-.fleft {
-  float: left; }
-
-.padding-right {
-  padding-right: 10px; }
-
-.footer_ul2_amrc {
-  margin: 0px;
-  list-style-type: none;
-  padding: 0px; }
-
-.footer_ul2_amrc li p {
-  display: table; }
-
-.footer_ul2_amrc li a:hover {
-  text-decoration: none; }
-
-.footer_ul2_amrc li i {
-  margin-top: 5px; }
-
-/*.bottom_border { 
-    border-bottom:1px solid #323f45; 
-    padding-bottom:20px;
-}*/
-.footer h5 {
-  color: #8d99e4; }
-
-.foote_bottom_ul_amrc {
-  list-style-type: none;
-  padding: 0px;
-  display: table;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-bottom: 10px;
-  margin-left: auto; }
-
-.foote_bottom_ul_amrc li {
-  display: inline; }
-
-.foote_bottom_ul_amrc li a {
-  color: #999;
-  margin: 0 12px; }
-
-.social_footer_ul {
-  display: table;
-  margin: 15px auto 0 auto;
-  list-style-type: none; }
-
-.social_footer_ul li {
-  padding-left: 20px;
-  padding-top: 10px;
-  float: left; }
-
-.social_footer_ul li a {
-  color: #CCC;
-  border: 1px solid #CCC;
-  padding: 8px;
-  border-radius: 50%; }
-
-.social_footer_ul li i {
-  width: 20px;
-  height: 20px;
-  text-align: center; }
-
-/*site variables*/
-/* blue */
-/* accent blue */
-/* lightest blue */
-/*
-$v_main: #a13c4f; //pink 
-$v_accent: #b7646f; // accent pink */
 /* navigation bar */
 .navbar {
   background-color: #BEBEBE; }
@@ -7311,16 +7199,16 @@ $v_accent: #b7646f; // accent pink */
   background-color: #BEBEBE; }
 
 .nav-link {
-  color: #2d42bf !important; }
+  color: #a13c4f !important; }
 
 .nav-link:hover {
-  color: #5164d6 !important; }
+  color: #b7646f !important; }
 
 .navbar-brand {
-  color: #2d42bf !important; }
+  color: #a13c4f !important; }
 
 .navbar-brand:hover {
-  color: #5164d6 !important; }
+  color: #b7646f !important; }
 
 @media (max-width: 992px) {
   .mobileMenu {
@@ -7358,19 +7246,19 @@ body {
   background-color: #EBECf0; }
 
 a {
-  color: #2d42bf; }
+  color: #a13c4f; }
 
 a:hover {
-  color: #5164d6; }
+  color: #b7646f; }
 
 .btn:hover {
-  background-color: #5164d6;
+  background-color: #b7646f;
   color: #fff; }
 
 .btn {
-  background-color: #2d42bf;
-  border: #2d42bf;
+  background-color: #a13c4f;
+  border: #a13c4f;
   color: #fff; }
 
 .btn:hover {
-  background-color: #5164d6; }
+  background-color: #b7646f; }
