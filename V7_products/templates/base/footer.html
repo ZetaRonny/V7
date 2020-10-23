@@ -1,12 +1,13 @@
 {% load static %}
 {% load fontawesome_5 %}
-{% fontawesome_5_static %} 
+{% fontawesome_5_static %}
+<div id="footer">
 <footer class="section footer-classic context-dark bg-image">
         <div class="container">
           <div class="row row-30">
             <div class="col-md-4 col-xl-5">
-              <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-                <p>Pour Your Heart Out</p>
+              <div class="pr-xl-4">
+                <h5>Pour Your Heart Out</h5>
                 <!-- Rights-->
                 <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Variant Seven</span><span>. </span><span>All Rights Reserved.</span></p>
               </div>
@@ -21,20 +22,14 @@
                 <dt>email:</dt>
                 <dd><a href="mailto:#">variantsvn@gmail.com</a></dd>
               </dl>
-              <dl class="contact-list">
-                <dt>phones:</dt>
-                <dd><a href="tel:#">https://karosearch.com</a> <span>or</span> <a href="tel:#">https://karosearch.com</a>
-                </dd>
-              </dl>
             </div>
             <div class="col-md-4 col-xl-3">
               <h5>Links</h5>
               <ul class="nav-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Pricing</a></li>
+              	<li><a href="{% url 'Index' %}">Home</a></li>
+                <li><a href="{% url 'About' %}">About</a></li>
+                <li><a href="{% url 'Contact' %}">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
               </ul>
             </div>
           </div>
@@ -49,8 +44,8 @@
 				</div>
 				<hr>
 			</div>	
-      </footer>
-
+  </footer>
+</div>
 <!-- <div id="footer">
 <a href="https://twitter.com/VariantSeven" target="_blank">{% fa5_icon 'twitter' 'fab' %}</a>
 <a href="https://www.instagram.com/variantseven/" target="_blank">{% fa5_icon 'instagram' 'fab' %}</a>
