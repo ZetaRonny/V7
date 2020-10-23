@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'V7_products',
-    "bootstrap4"
+    "bootstrap4",
+    'django-fontawesome-5'
 ]
 
 MIDDLEWARE = [
