@@ -1,4 +1,6 @@
 {% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %} 
 <!doctype html>
 <html>
 <head>
@@ -11,7 +13,7 @@
 		{% include 'base/navbar.html' %}
 			<div id="page-content">
 				{% block content %}{% endblock %}	
-			</div style="padding-bottom: 50px;">
+			</div>
 			{% include 'base/footer.html' %}
 </body>
 </html>
