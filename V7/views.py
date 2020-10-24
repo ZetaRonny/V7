@@ -50,7 +50,7 @@ def contact(request):
 				'message from ' + username, # subject
 				 message,
 				 email,
-				 ['ContactVariantSeven@gmail.com'],
+				 ['variantsvn@gmail.com'],
 				)
 				return redirect('/thankyou')
 			else:
