@@ -1,4 +1,8 @@
 /* navigation bar */
+#NavLogo {
+  width: 75px;
+  height: 50px; }
+
 .navbar {
   background-color: #BEBEBE; }
 
