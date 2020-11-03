@@ -1,16 +1,7 @@
 from django.http import JsonResponse
 from django.views.generic import ListView
 from .models import Product, Manufacturer
-
-class productListView(ListView):
-	queryset = Product.objects.all()
-	template_name = "products/product_list.html"
-
-	# def get_context_data(self, *args,  **kwargs):
-	# 	context = super(productListView, self).get_context_data(*args, **kwargs)
-	# 	print(context)
-	# 	return context
-
+from django.shortcuts import render , redirect, get_object_or_404
 
 def product_list_view(request):
 	qs = Product.objects.all()
@@ -18,3 +9,11 @@ def product_list_view(request):
 			'object_list': qs
 	}
 	return render(request,"products/product_list.html",context)
+
+def product_detail_view(request, pk=None, *args, **kwargs):
+	#instance = Product.objects.get(pk=pk)
+	instance = get_object_or_404(Product, pk=pk)
+	context = {
+			'object': instance
+	}
+	return render(request,"products/product_detail.html", context)
