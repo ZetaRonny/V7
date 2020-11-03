@@ -1,26 +1,20 @@
 from django.http import JsonResponse
+from django.views.generic import ListView
 from .models import Product, Manufacturer
 
+class productListView(ListView):
+	queryset = Product.objects.all()
+	template_name = "products/product_list.html"
 
-def product_list(request):
-	products = Product.objects.all()
-	data = {"products": list(products.values())}
-	response = JsonResponse(data)
-	return response
+	# def get_context_data(self, *args,  **kwargs):
+	# 	context = super(productListView, self).get_context_data(*args, **kwargs)
+	# 	print(context)
+	# 	return context
 
-def product_detail(request, pk):
-	try:
-		product = Product.objects.get(pk=pk)
-		data = {"product": {
-					"name": product.name,
-					"description":product.description,
-					}}
-		response = JsonResponse(data)
-	except Product.DoesNotExist:
-		response = JsonResponse({
-				"err":{
-						"code": 404,
-						"message":"product not found!"
-				}},
-			status=404)
-	return response
+
+def product_list_view(request):
+	qs = Product.objects.all()
+	context = {
+			'object_list': qs
+	}
+	return render(request,"products/product_list.html",context)

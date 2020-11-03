@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from V7_products.views import productListView
 from .views import login_page, register_page, index , contact, about , thankyou , blog , faq
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", include("V7_products.urls")),
+    # path("api/", include("V7_products.urls")),
+    path('products/', productListView.as_view()),
     path("login/", login_page, name='Login'),
     path("register/", register_page, name='Register'),
     path('', index, name="Index"),
