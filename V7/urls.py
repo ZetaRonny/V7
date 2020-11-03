@@ -24,7 +24,7 @@ from .views import login_page, register_page, index , contact, about , thankyou 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path("api/", include("V7_products.urls")),
-    path('products/', productListView.as_view()),
+    path('products/', productListView.as_view(), name="Products"),
     path("login/", login_page, name='Login'),
     path("register/", register_page, name='Register'),
     path('', index, name="Index"),
