@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import login_page, register_page, index , contact, about , thankyou
+from .views import login_page, register_page, index , contact, about , thankyou , blog , faq
 
 
 urlpatterns = [
@@ -27,7 +27,8 @@ urlpatterns = [
     path("register/", register_page, name='Register'),
     path('', index, name="Index"),
     path('contact/', contact, name='Contact'),
-    path('about/', about, name='About'),
+    # path('about/', about, name='About'),
     path('thankyou/', thankyou, name='Thankyou'),
-
+    path('blog/', blog, name='Blog'),
+    path('faq/', faq, name='FAQ'),
 ]

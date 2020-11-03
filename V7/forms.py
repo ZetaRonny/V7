@@ -8,7 +8,6 @@ from django.conf import settings
 User = get_user_model()
 
 class ContactForm(forms.Form):
-	username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
 	email = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control'}))
 	message = forms.CharField(max_length=1024, widget=forms.Textarea(attrs={'class' : 'form-control'}))
 

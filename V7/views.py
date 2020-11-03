@@ -28,7 +28,6 @@ def contact(request):
 	else:
 		form = ContactForm(request.POST or None)
 		if form.is_valid():
-			username = form.cleaned_data.get('username')
 			message = form.cleaned_data.get('message')
 			email = form.cleaned_data.get('email')
 
@@ -47,7 +46,7 @@ def contact(request):
 
 			if result['success']:
 				send_mail(
-				'message from ' + username, # subject
+				'message from contact form', # subject
 				 message,
 				 email,
 				 ['variantsvn@gmail.com'],
@@ -92,3 +91,11 @@ def register_page(request):
 		user.objects.create_user(username, email, password)  
 		# authenticate email 
 	return render(request,'auth/register_template.html', context)
+
+def blog(request):
+	context = {'hey':'hey'}
+	return render(request, 'blog/blog.html', context)
+
+def faq(request):
+	context = {'':''}
+	return render(request, 'faq.html', context)

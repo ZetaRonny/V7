@@ -4,6 +4,7 @@
 <div id="footer">
 <footer class="section footer-classic context-dark bg-image">
         <div class="container">
+        <div class="mx-auto">
           <div class="row row-30">
             <div class="col-md-4 col-xl-5">
               <div class="pr-xl-4">
@@ -27,9 +28,9 @@
               <h5>Links</h5>
               <ul class="nav-list">
               	<li><a href="{% url 'Index' %}">Home</a></li>
-                <li><a href="{% url 'About' %}">About</a></li>
+                <li><a href="{% url 'Blog' %}">Blog</a></li>
                 <li><a href="{% url 'Contact' %}">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="{% url 'FAQ' %}">FAQ</a></li>
               </ul>
             </div>
           </div>
@@ -42,6 +43,7 @@
 					</ul>
 				</div>
 				<hr>
+			</div>
 			</div>	
   </footer>
 </div>
