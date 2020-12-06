@@ -12,7 +12,7 @@ from .forms import LoginForm , RegisterForm , ContactForm
 
 def index(request):
 	context = {"title":"V7",} 
-	return render(request,'index.html', context)
+	return render(request,'index/index_template.html', context)
 
 
 def thankyou(request):

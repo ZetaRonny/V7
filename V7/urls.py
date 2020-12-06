@@ -31,5 +31,6 @@ urlpatterns = [
     path("register/", register_page, name='Register'),
     path('thankyou/', thankyou, name='Thankyou'),
     path('faq/', faq, name='FAQ'),
+    path('', index, name='Index'),
     path('blog/', blog_list_view, name='Blogs'),
 ]
