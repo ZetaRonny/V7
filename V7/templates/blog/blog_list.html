@@ -1,11 +1,11 @@
-{% extends '../base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
 <div class="container">
 	<div class="row">
 	{% for obj in object_list %}
 	<div class="col">
-			{% include 'products/card.html' with instance=obj %}
+			{% include 'cards/card.html' with instance=obj %}
 	</div>
 	{% endfor %}
 	</div>

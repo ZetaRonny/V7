@@ -12,7 +12,8 @@ class Manufacturer(models.Model):
 class Product(models.Model):
 	manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE,related_name="products")
 
-	name = models.CharField(max_length=120)
+	title = models.CharField(max_length=200, unique=True, default="n/a")
+	slug = models.SlugField(max_length=200, unique=True, default="n/a")
 	description = models.TextField(blank=True,null=True)
 	photo = models.ImageField(blank=True,null=True)
 	price = models.FloatField()

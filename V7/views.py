@@ -14,9 +14,6 @@ def index(request):
 	context = {"title":"V7",} 
 	return render(request,'index.html', context)
 
-def about(request):
-	context = {"title":"About",}
-	return render(request, 'about.html', context)
 
 def thankyou(request):
 	context = {"title":"thank you"}
@@ -92,9 +89,6 @@ def register_page(request):
 		# authenticate email 
 	return render(request,'auth/register_template.html', context)
 
-def blog(request):
-	context = {'hey':'hey'}
-	return render(request, 'blog/blog.html', context)
 
 def faq(request):
 	context = {'':''}
