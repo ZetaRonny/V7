@@ -33,4 +33,5 @@ urlpatterns = [
     path('faq/', faq, name='FAQ'),
     path('', index, name='Index'),
     path('blog/', blog_list_view, name='Blogs'),
+    path('contact/', contact, name='Contact'),
 ]

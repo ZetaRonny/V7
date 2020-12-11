@@ -15,11 +15,11 @@ class Product(models.Model):
 	title = models.CharField(max_length=200, unique=True, default="n/a")
 	slug = models.SlugField(max_length=200, unique=True, default="n/a")
 	description = models.TextField(blank=True,null=True)
-	photo = models.ImageField(blank=True,null=True)
+	image = models.ImageField(blank=True,null=True)
 	price = models.FloatField()
 	Shipping_cost = models.FloatField()
 	quantity = models.PositiveSmallIntegerField()
 
 	def __str__(self):
-		return self.name
+		return self.title
 		
