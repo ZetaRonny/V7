@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import environ
+import os
 import mimetypes
 
 mimetypes.add_type("text/css", ".css", True)
@@ -23,7 +24,7 @@ env = environ.Env(
 environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 templates = environ.Path('V7/templates')
 
 # False if not in os.environ
@@ -141,11 +142,14 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 
 STATIC_URL = '/assets/'
 
-STATIC_ROOT ='assets'
+STATIC_ROOT = 'assets'
 
 STATICFILES_DIRS = [
    'V7/static_compiled',
 ]
+
+MEDIA_ROOT =  MEDIA_ROOT = os.path.join(BASE_DIR,'assets/media/')
+MEDIA_URL= '/media/'
 
 # Email Settings
 EMAIL_BACKEND = env('EMAIL_BACKEND')
@@ -157,4 +161,3 @@ EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
 RECAPTCHA_SITE_KEY = env('RECAPTCHA_SITE_KEY')
 RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
-

@@ -34,4 +34,4 @@ urlpatterns = [
     path('', index, name='Index'),
     path('blog/', blog_list_view, name='Blogs'),
     path('contact/', contact, name='Contact'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
