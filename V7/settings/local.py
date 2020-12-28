@@ -14,6 +14,8 @@ import environ
 import os
 import mimetypes
 
+from V7.aws.conf import *
+
 mimetypes.add_type("text/css", ".css", True)
 
 env = environ.Env(
@@ -33,7 +35,7 @@ DEBUG = env('DEBUG')
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = ['variantseven.com', 'localhost', '127.0.0.1', 'ec2-3-22-164-75.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -51,7 +53,8 @@ INSTALLED_APPS = [
     'V7_products',
     "bootstrap4",
     'fontawesome_5',
-    'blog'
+    'blog',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +164,5 @@ EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
 RECAPTCHA_SITE_KEY = env('RECAPTCHA_SITE_KEY')
 RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
+
+
