@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path("api/", include("V7_products.urls")),
     path('products/', product_list_view , name="Products"),
-    path('products/<pk>/', product_detail_view),
+    path('products/<pk>/', product_detail_view, name="product-detail-view"),
     path("login/", login_page, name='Login'),
     path("register/", register_page, name='Register'),
     path('thankyou/', thankyou, name='Thankyou'),
