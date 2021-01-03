@@ -1,5 +1,6 @@
 import random
 import os
+from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -37,3 +38,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog-detail-view', kwargs={'pk': str(self.id)})
