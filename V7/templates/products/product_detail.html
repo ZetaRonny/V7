@@ -1,4 +1,12 @@
-{% extends 'base/base.html' %}
+{% extends 'products/product_list.html' %}
+
+
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+{{ block.super }}
+{% breadcrumb object.title "product.views.product_detail_view" object.id  %}
+{% endblock %}
+
 
 {% block content %}
 {{object.title}}

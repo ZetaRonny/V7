@@ -1,4 +1,11 @@
-{% extends 'base/base.html' %}
+{% extends "blog/blog_list.html" %}
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+{{ block.super }}
+{% breadcrumb object.title "blog.views.blog_detail_view" object.id  %}
+{% endblock %}
+
+
 
 {% block content %}
 <div class="container">
@@ -6,4 +13,4 @@
 		{{object.title}}
 	</div>
 </div>
-{%endblock %}
+{% endblock %}

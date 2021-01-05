@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'fontawesome_5',
     'blog',
     'storages',
+    'django_bootstrap_breadcrumbs'
 ]
 
 MIDDLEWARE = [

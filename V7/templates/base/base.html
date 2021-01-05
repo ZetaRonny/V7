@@ -9,8 +9,16 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 		{% include 'base/navbar.html' %}
+		{% load django_bootstrap_breadcrumbs %}
+		{% block breadcrumbs %}
+		{% clear_breadcrumbs %}
+		{% breadcrumb "Home" "Index" %}
+		{% endblock %}
+		{% render_breadcrumbs %}
 			<div id="page-content">
-				{% block content %}{% endblock %}	
+				{% block content %}
+				
+				{% endblock %}	
 			</div>
 			{% include 'base/footer.html' %}
 </body>
