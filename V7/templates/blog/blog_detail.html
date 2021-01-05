@@ -10,7 +10,13 @@
 {% block content %}
 <div class="container">
 	<div class="row">
-		{{object.title}}
+		<div class="col" style="padding:20px">
+			{% include 'cards/blog_detail_card.html' with instance=object %}
+		</div>
+		<div class="col" style="padding:20px">
+		{% include 'cards/meta_detail_card.html' with instance=object %}
+		{% include 'cards/share_card.html' with instance=object %}
+		</div>
 	</div>
 </div>
 {% endblock %}
