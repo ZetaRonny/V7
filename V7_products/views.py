@@ -11,7 +11,7 @@ def product_list_view(request):
 	return render(request,"products/product_list.html",context)
 
 def product_detail_view(request, pk=None, *args, **kwargs):
-	instance = Product.objects.get_by_id(pk)
+	instance = get_object_or_404(Product, pk=pk)
 	if instance is None:
 		raise Http404("product is not found")
 
