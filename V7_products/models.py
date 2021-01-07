@@ -1,6 +1,7 @@
 import random
 import os
 from django.urls import reverse
+from django.db.models import Q
 from django.db import models
 
 # Create your models here.
@@ -22,6 +23,17 @@ def upload_image_path(instance, filename):
     final_filename = '{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
     return "products/{new_filename}/{final_filename}".format(new_filename=new_filename,final_filename=final_filename)
 
+class ProductManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(title__icontains=query) | 
+                         Q(description__icontains=query)|
+                         Q(slug__icontains=query)
+                        )
+            qs = qs.filter(or_lookup).distinct() # distinct() is often necessary with Q lookups
+        return qs
+
 class Manufacturer(models.Model):
 	name = models.CharField(max_length=120)
 	location = models.CharField(max_length=120)
@@ -38,8 +50,11 @@ class Product(models.Model):
 	description = models.TextField(blank=True,null=True)
 	image = models.ImageField(blank=True,null=True)
 	price = models.FloatField()
+	featured = models.BooleanField(default=False)
 	Shipping_cost = models.FloatField()
 	quantity = models.PositiveSmallIntegerField()
+
+	objects = ProductManager()
 
 	def __str__(self):
 		return self.title

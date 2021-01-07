@@ -2,13 +2,26 @@ import random
 import os
 from django.urls import reverse
 from django.db import models
+from django.db.models import Q
 from django.contrib.auth.models import User
+
 
 # Create your models here.
 STATUS = (
     (0,"Draft"),
     (1,"Publish")
 )
+
+class PostManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(title__icontains=query) | 
+                     Q(description__icontains=query)|
+                     Q(slug__icontains=query)
+                    )
+            qs = qs.filter(or_lookup).distinct() # distinct() is often necessary with Q lookupsreturn qs
+        return qs
 
 def get_file_ext(filename):
     base_name = os.path.basename(filename)
@@ -32,6 +45,8 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    objects = PostManager()
 
     class Meta:
         ordering = ['-created_on']

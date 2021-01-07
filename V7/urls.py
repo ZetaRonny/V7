@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from V7_products.views import product_list_view, product_detail_view
 from blog.views import blog_list_view , blog_detail_view
+from search.views import SearchView
 from .views import login_page, register_page, index , contact, thankyou , faq
 
 
@@ -35,4 +36,5 @@ urlpatterns = [
     path('blog/', blog_list_view, name='Blogs'),
     path('blog/<pk>/', blog_detail_view, name='blog-detail-view'),
     path('contact/', contact, name='Contact'),
+    path('search/', SearchView.as_view(), name='search')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
