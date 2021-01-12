@@ -49,14 +49,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_bootstrap_breadcrumbs',
     'corsheaders',
-    'V7_products',
     "bootstrap4",
     'fontawesome_5',
-    'blog',
     'storages',
-    'django_bootstrap_breadcrumbs',
-    'search'
+    #my apps
+    'V7_products',
+    'blog',
+    'search',
+    'cart'
 ]
 
 MIDDLEWARE = [

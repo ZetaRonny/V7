@@ -49,7 +49,7 @@ class Product(models.Model):
 	slug = models.SlugField(max_length=200, unique=True, default="n/a")
 	description = models.TextField(blank=True,null=True)
 	image = models.ImageField(blank=True,null=True)
-	price = models.FloatField()
+	price = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
 	featured = models.BooleanField(default=False)
 	Shipping_cost = models.FloatField()
 	quantity = models.PositiveSmallIntegerField()
@@ -60,7 +60,7 @@ class Product(models.Model):
 		return self.title
 
 	def get_absolute_url(self):
-		return reverse('product-detail-view', kwargs={'pk': str(self.id)})
+		return reverse('products:detail', kwargs={'slug': self.slug})
 
  
 

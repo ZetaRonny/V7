@@ -17,24 +17,26 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from V7_products.views import product_list_view, product_detail_view
+from V7_products.views import product_list_view, product_detail_view, ProductDetailSlugView
 from blog.views import blog_list_view , blog_detail_view
 from search.views import SearchView
+from cart.views import cart_home
 from .views import login_page, register_page, index , contact, thankyou , faq
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path("api/", include("V7_products.urls")),
-    path('products/', product_list_view , name="Products"),
-    path('products/<pk>/', product_detail_view, name="product-detail-view"),
+    path('products/', include('V7_products.urls')),
     path("login/", login_page, name='Login'),
     path("register/", register_page, name='Register'),
     path('thankyou/', thankyou, name='Thankyou'),
     path('faq/', faq, name='FAQ'),
     path('', index, name='Index'),
+    # update this
     path('blog/', blog_list_view, name='Blogs'),
     path('blog/<pk>/', blog_detail_view, name='blog-detail-view'),
     path('contact/', contact, name='Contact'),
-    path('search/', SearchView.as_view(), name='search')
+    path('cart/', include('cart.urls'), name='Cart'),
+    path('search/', SearchView.as_view(), name='search'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

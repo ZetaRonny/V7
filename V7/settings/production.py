@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'storages',
     'django_bootstrap_breadcrumbs',
     'search',
+    'cart'
 ]
 
 MIDDLEWARE = [
