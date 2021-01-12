@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from V7_products.views import product_list_view, product_detail_view, ProductDetailSlugView
 from blog.views import blog_list_view , blog_detail_view
 from search.views import SearchView
 from cart.views import cart_home
@@ -33,9 +32,7 @@ urlpatterns = [
     path('thankyou/', thankyou, name='Thankyou'),
     path('faq/', faq, name='FAQ'),
     path('', index, name='Index'),
-    # update this
-    path('blog/', blog_list_view, name='Blogs'),
-    path('blog/<pk>/', blog_detail_view, name='blog-detail-view'),
+    path('blog/', include('blog.urls'), name='Blogs'),
     path('contact/', contact, name='Contact'),
     path('cart/', include('cart.urls'), name='Cart'),
     path('search/', SearchView.as_view(), name='search'),
