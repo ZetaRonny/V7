@@ -16,6 +16,12 @@ class ProductDetailSlugView(DetailView):
 	queryset = Product.objects.all()
 	template_name = "products/product_detail.html"
 
+	def get_context_data(self, *args, **kwargs):
+		context = super(ProductDetailSlugView, self).get_context_data(*args, **kwargs)
+		cart_obj = Cart.objects.new_or_get(self.request)
+		context['cart'] = cart_obj
+		return context
+
 	def get_object(self, *args, **kwargs):
 		request = self.request
 		slug = self.kwargs.get('slug')
@@ -30,13 +36,13 @@ class ProductDetailSlugView(DetailView):
 			raise Http404('hoho not found')
 		return instance
 
-def product_detail_view(request, pk=None, *args, **kwargs):
-	instance = get_object_or_404(Product, pk=pk)
-	if instance is None:
-		raise Http404("product is not found")
+# def product_detail_view(request, pk=None, *args, **kwargs):
+# 	instance = get_object_or_404(Product, pk=pk)
+# 	if instance is None:
+# 		raise Http404("product is not found")
 
 
-	context = {
-			'object': instance
-	}
-	return render(request,"products/product_detail.html", context)
+# 	context = {
+# 			'object': instance
+# 	}
+# 	return render(request,"products/product_detail.html", context)

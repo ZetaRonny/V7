@@ -9,5 +9,17 @@
 
 
 {% block content %}
-{{object.title}}
+
+<div class="row">
+	<div class="col-12 col-md-6">
+		<h1>{{object.title}}</h1>
+		{{object.description}}<br/>
+		{% if object.image %}
+		<img src='{{object.image.url}}' class='img-fluid' />
+		{% endif %}
+	</div>
+	<div class="col-12 col-md-6">
+		{% include 'components/add_to_cart/update-cart.html' with product=object cart=cart %}
+	</div>
+</div>
 {%endblock %}

@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+	<div class="card-body">
+		<form method='POST' class='form' action="{% url 'cart:update' %}">
+		{% csrf_token %}
+		<input type='hidden' name='product_id' value='{{ product.id }}'>
+		<button type='submit' class='btn btn-link'>Add to cart</button>
+		</form>
+	</div>
+</div>

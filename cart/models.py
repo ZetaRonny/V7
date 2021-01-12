@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import *
 from django.conf import settings
 from django.db.models.signals import pre_save, post_save , m2m_changed
 
@@ -14,7 +15,7 @@ class CartManager(models.Manager):
 		return obj, True
 
 	def new_or_get(self, request):
-		cart_id = request.session.get('cart_id',None)
+		cart_id = request.session.get('cart_id', None)
 		qs = self.get_queryset().filter(id=cart_id)
 		if qs.count() == 1:
 			new_obj = False
@@ -55,13 +56,13 @@ def m2m_changed_cart_reciever(sender, instance, action, *args, **kwags):
 		total = 0
 		for product in products:
 			total += product.price
-		instance.total = total
+		instance.subtotal = total
 		instance.save()
 
 
 m2m_changed.connect(m2m_changed_cart_reciever, sender=Cart.products.through)
 
 def pre_save_changed_cart_reciever(sender, instance, *args, **kwags):
-	instance.total = instance.subtotal
+	instance.total = Decimal(instance.subtotal) * Decimal(1.16)
 
 pre_save.connect(pre_save_changed_cart_reciever, sender=Cart)
