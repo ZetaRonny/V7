@@ -1,5 +1,6 @@
 {% load static %}
-<!DOCTYPE html>
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -51,6 +52,11 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'Login' %}">
                 Login
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'cart:home' %}">
+                {{request.session.cart_items}} Cart
               </a>
             </li>
           </ul>
