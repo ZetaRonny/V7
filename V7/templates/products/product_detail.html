@@ -9,11 +9,8 @@
 
 
 {% block content %}
-
 <div class="row">
 	<div class="col-12 col-md-6">
-		<h1>{{object.title}}</h1>
-		{{object.description}}<br/>
 		{% if object.image %}
 		<img src='{{object.image.url}}' class='img-fluid' />
 		{% endif %}

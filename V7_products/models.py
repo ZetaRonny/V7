@@ -11,6 +11,16 @@ STATUS = (
     (1,"Available")
 )
 
+SIZES = (
+	('OFA', 'One Size Fits All'),
+    ('S',"Small"),
+    ('M',"Medium"),
+    ('L',"Large"),
+    ('XL',"Extra Large"),
+    ('2XL',"Double Extra Large"),
+    ('3XL',"Triple Extra Large")
+)
+
 def get_file_ext(filename):
     base_name = os.path.basename(filename)
     name , ext = os.path.splitext(filename)
@@ -53,6 +63,7 @@ class Product(models.Model):
 	featured = models.BooleanField(default=False)
 	Shipping_cost = models.FloatField()
 	quantity = models.PositiveSmallIntegerField()
+	sizes =  models.CharField(max_length=200, choices=SIZES, default='OFA')
 
 	objects = ProductManager()
 

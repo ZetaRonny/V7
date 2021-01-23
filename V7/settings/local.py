@@ -146,16 +146,16 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/assets/'
+# STATIC_URL = '/assets/'
 
-STATIC_ROOT = 'assets'
+# STATIC_ROOT = 'assets'
 
-STATICFILES_DIRS = [
-   'V7/static_compiled',
-]
+# STATICFILES_DIRS = [
+#    'V7/static_compiled',
+# ]
 
-MEDIA_ROOT =  MEDIA_ROOT = os.path.join(BASE_DIR,'assets/media/')
-MEDIA_URL= '/media/'
+# MEDIA_ROOT =  MEDIA_ROOT = os.path.join(BASE_DIR,'assets/media/')
+# MEDIA_URL= '/media/'
 
 # Email Settings
 EMAIL_BACKEND = env('EMAIL_BACKEND')

@@ -152,10 +152,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 
 # STATIC_ROOT = 'assets'
 
-# STATICFILES_DIRS = [
-#    'V7/static_compiled',
-# ]
-
 # MEDIA_ROOT =  MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # MEDIA_URL= '/media/'
 
