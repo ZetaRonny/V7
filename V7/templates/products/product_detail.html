@@ -9,14 +9,16 @@
 
 
 {% block content %}
-<div class="row">
-	<div class="col-12 col-md-6">
-		{% if object.image %}
-		<img src='{{object.image.url}}' class='img-fluid' />
-		{% endif %}
-	</div>
-	<div class="col-12 col-md-6">
-		{% include 'components/add_to_cart/update-cart.html' with product=object cart=cart %}
+<div class="container">
+	<div class="row">
+		<div class="col" style="padding:20px">
+			{% if object.image %}
+			<img src='{{object.image.url}}' class='img-fluid' />
+			{% endif %}
+		</div>
+		<div class="col" style="padding:20px">
+			{% include 'components/add_to_cart/update-cart.html' with product=object cart=cart %}
+		</div>
 	</div>
 </div>
 {%endblock %}
