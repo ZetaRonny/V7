@@ -9,12 +9,8 @@
 
 {% block content %}
 <div class="container">
-	<div class="row">
 	{% for obj in object_list %}
-	<div class="col">
-			{% include 'cards/card.html' with instance=obj %}
-	</div>
+	{% include 'cards/card.html' with instance=obj %}
 	{% endfor %}
-	</div>
 </div>
 {%endblock %}

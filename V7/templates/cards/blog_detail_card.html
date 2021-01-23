@@ -1,8 +1,7 @@
 <div class="card" style="width: 100%">
-{% if object.image %}
-<img src='{{object.image.url}}' class='img-fluid' style=" height:300px" />
-{% endif %}
+{% include 'cards/meta_detail_card.html' with instance=object %}
   <div class="card-body">
+  	
     <p>{{object.content}}</p>
   </div>
 </div>
