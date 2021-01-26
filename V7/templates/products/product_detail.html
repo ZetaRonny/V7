@@ -11,12 +11,12 @@
 {% block content %}
 <div class="container">
 	<div class="row">
-		<div class="col" style="padding:20px">
+		<div class="col-md-8 col-lg-6 mt-2">
 			{% if object.image %}
 			<img src='{{object.image.url}}' class='img-fluid' />
 			{% endif %}
 		</div>
-		<div class="col" style="padding:20px">
+		<div class="col-md-8 col-lg-6 mt-2">
 			<div class="card" style="width: 90%;">
 				<div class="card-body">
 					<h2 class="card-title">{{object.title}}</h2>
