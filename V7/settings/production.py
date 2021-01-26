@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'V7_products',
     'bootstrap4',
     'fontawesome_5',
+    'orders',
     'blog',
     'storages',
     'django_bootstrap_breadcrumbs',

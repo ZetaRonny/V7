@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "bootstrap4",
     'fontawesome_5',
     'blog',
+    'orders',
     'storages',
     'django_bootstrap_breadcrumbs',
     'search',

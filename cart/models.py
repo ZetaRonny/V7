@@ -27,7 +27,7 @@ class CartManager(models.Manager):
 			cart_obj = self.new(user=request.user)
 			new_obj = True
 			request.session['cart_id'] = cart_obj.id
-		return cart_obj
+		return cart_obj , new_obj
 
 	def new(self, user=None):
 		user_obj = None

@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'fontawesome_5',
     'storages',
     #my apps
+    'orders',
     'V7_products',
     'blog',
     'search',

@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+	<div class="card" style="width: 100%">
+	 <div class="card-body">
+		<h1>checkout</h1>
+		<p>cart total: {{object.cart.total}}</p>
+		<p>shipping total: {{object.shipping_total}}</p>
+		<p>total: {{object.total}}</p>
+	</div>
+	</div>
+
+{% endblock %}
