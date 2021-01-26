@@ -17,7 +17,14 @@
 			{% endif %}
 		</div>
 		<div class="col" style="padding:20px">
+			<div class="card" style="width: 90%;">
+				<div class="card-body">
+					<h2 class="card-title">{{object.title}}</h2>
+					<h3 class="card-text">{{object.price}}</h3>
+					<p class="card-text">{{object.description}}</p>
 			{% include 'components/add_to_cart/update-cart.html' with product=object cart=cart %}
+			</div>
+		</div>
 		</div>
 	</div>
 </div>

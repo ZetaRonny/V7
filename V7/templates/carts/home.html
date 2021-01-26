@@ -17,8 +17,12 @@
 			  	{% for product in cart.products.all %}
 			    <tr>
 			      <th scope="row">{{ forloop.counter}}</th>
-			      <td>{{ product.title }}</td>
+			      <td>
+			      	{{ product.title }}
+			      	{% include 'components/add_to_cart/update-cart.html' with product=product cart=cart  in_cart=True %}
+			      </td>
 			      <td>{{ product.price }}</td>
+
 			    </tr>
 			    {% endfor %}
 			    <tr>
